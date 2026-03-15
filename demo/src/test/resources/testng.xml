@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Mobile Suite" parallel="tests" thread-count="3">
+    
+    <test name="testGetHintFromAd">
+        <parameter name="app" value="src/main/resources/alchemy-2-0-83.apk"/>
+        <parameter name="appPackage" value="com.ilyin.alchemy"/>
+        <parameter name="port" value="4723"/>
+        <classes>
+            <class name="tests/HintsTest.java"/>
+        </classes>
+    </test>
+
+    <test name="testVideoPlaybackPositive">
+        <parameter name="app" value="src/main/resources/vk-video-1-136.apk"/>
+        <parameter name="appPackage" value="com.vk.video"/>
+        <parameter name="port" value="8200"/>
+        <classes>
+            <class name="tests/VideoPlaybackTest"/>
+        </classes>
+    </test>
+
+        <test name="testVideoPlaybackNegative">
+        <parameter name="app" value="src/main/resources/vk-video-1-136.apk"/>
+        <parameter name="appPackage" value="src/main/resources/vk-video-1-136.apk"/>
+        <parameter name="port" value="8200"/>
+        <classes>
+            <class name="tests/VideoPlaybackTest"/>
+        </classes>
+    </test>
+</suite>
